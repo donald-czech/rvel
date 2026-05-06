@@ -2,7 +2,14 @@
 const nav = document.querySelector(".nav");
 const toggle = document.getElementById("themeToggle");
 const heroImage = document.getElementById("heroImage");
+const logoImages = document.querySelectorAll(".logo img");
 let heroImageTimer;
+
+function updateLogoImage(isDark) {
+  logoImages.forEach((logo) => {
+    logo.src = isDark ? "images/logo-header-dark-readable.png" : "images/logo-header-light-readable.png";
+  });
+}
 
 function updateThemeImage(isDark, animate = true) {
   if (!heroImage) return;
@@ -39,8 +46,10 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
   if (toggle) toggle.textContent = "☀";
+  updateLogoImage(true);
   updateThemeImage(true, false);
 } else {
+  updateLogoImage(false);
   updateThemeImage(false, false);
 }
 
@@ -63,6 +72,7 @@ if (toggle) {
     const isDark = document.body.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
     toggle.textContent = isDark ? "☀" : "☾";
+    updateLogoImage(isDark);
     updateThemeImage(isDark);
   });
 }
@@ -77,3 +87,5 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+
