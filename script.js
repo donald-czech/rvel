@@ -19,9 +19,7 @@ document.querySelectorAll(".nav a").forEach(link => {
   });
 });
 
-// ANIMACE SLUŽEB
-const cards = document.querySelectorAll(".card");
-
+// ===== ANIMACE (SLUŽBY + DIVIDER + TEXT + HERO) =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -30,7 +28,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-cards.forEach(card => observer.observe(card));
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
 
 // LIGHTBOX
 const images = document.querySelectorAll(".gallery img");
