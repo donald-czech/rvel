@@ -1,3 +1,4 @@
+
 :root {
   --bg: #fff;
   --text: #111;
@@ -18,11 +19,11 @@ body {
   color: var(--text);
 }
 
-/* ===== HEADER (NEJVYŠŠÍ VRSTVA) ===== */
+/* ===== HEADER ===== */
 .header {
   position: sticky;
   top: 0;
-  z-index: 99999; /* 🔥 FIX: vždy nad vším */
+  z-index: 99999;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(10px);
 }
@@ -34,19 +35,36 @@ body.dark .header {
 .header-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 18px;
 }
 
+/* ===== LOGO ===== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .logo img {
-  height: 38px;
+  height: 42px;
+  width: auto;
 }
 
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.logo:hover span {
+  color: var(--accent);
+}
+
+/* ===== NAV ===== */
 .nav {
   display: flex;
   gap: 15px;
@@ -57,11 +75,12 @@ body.dark .header {
   color: var(--text);
 }
 
+/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
 }
 
-/* ===== HERO (NESMÍ PŘEKRÝVAT HEADER) ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   z-index: 1;
@@ -76,9 +95,7 @@ body.dark .header {
   display: block;
   border-radius: 12px;
 
-  position: relative;
-  z-index: 0;
-  pointer-events: none; /* 🔥 neblokuje kliky */
+  pointer-events: none;
 }
 
 /* BUTTON */
@@ -108,9 +125,6 @@ body.dark .header {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.7s ease;
-
-  position: relative;
-  z-index: 1;
 }
 
 .card.show {
@@ -148,7 +162,6 @@ body.dark .header {
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 10px;
 }
 
 /* ===== ODDĚLOVAČ ===== */
@@ -157,18 +170,14 @@ body.dark .header {
   background: #000;
   width: 85%;
   margin: 60px auto 30px auto;
-  border-radius: 2px;
-  opacity: 0.85;
 }
 
-/* TEXT POD SLUŽBAMI */
+/* ===== TEXT ===== */
 .after-services {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
   padding: 0 20px 60px;
-  font-size: 18px;
-  line-height: 1.6;
 }
 
 /* ===== ANIMACE ===== */
@@ -176,9 +185,6 @@ body.dark .header {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
-
-  position: relative;
-  z-index: 1;
 }
 
 .reveal.show {
@@ -186,34 +192,32 @@ body.dark .header {
   transform: translateY(0);
 }
 
-/* ===== MOBILE MENU FIX ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .logo img {
+    height: 34px;
+  }
 
   .hamburger {
     display: block;
     z-index: 100000;
-    position: relative;
   }
 
   .nav {
     position: absolute;
     top: 70px;
     right: 20px;
-
     background: var(--bg);
     flex-direction: column;
     padding: 15px;
-
     display: none;
-
     z-index: 99999;
-
-    width: max-content;
-    min-width: 180px;
-
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-
     pointer-events: none;
   }
 
