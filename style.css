@@ -1,0 +1,195 @@
+/* ===== BARVY ===== */
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --card: #f3f3f3;
+  --accent: #0077ff;
+}
+
+body.dark {
+  --bg: #0f0f0f;
+  --text: #f5f5f5;
+  --card: #1c1c1c;
+}
+
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark .header {
+  background: rgba(0,0,0,0.7);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 38px;
+}
+
+.logo span {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 25px 0 80px;
+  text-align: center;
+}
+
+/* světle šedý box */
+body:not(.dark) .hero {
+  background: #f2f2f2;
+  margin: 20px 0;
+  border-radius: 18px;
+  padding: 40px 20px 80px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* ===== SLUŽBY ===== */
+.section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* ===== CARD ANIMACE ===== */
+.card {
+  padding: 20px;
+  background: var(--card);
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .nav { display: none; }
+}
