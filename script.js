@@ -1,4 +1,4 @@
-// ===== DARK MODE =====
+// DARK MODE
 const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("click", () => {
@@ -6,7 +6,7 @@ themeToggle.addEventListener("click", () => {
 });
 
 
-// ===== MOBILE MENU =====
+// HAMBURGER MENU
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 
@@ -15,7 +15,7 @@ menuToggle.addEventListener("click", () => {
 });
 
 
-// zavření menu po kliknutí na odkaz (mobil)
+// zavření menu po kliknutí (mobil)
 document.querySelectorAll(".nav a").forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("active");
@@ -23,19 +23,15 @@ document.querySelectorAll(".nav a").forEach(link => {
 });
 
 
-// ===== ANIMACE KARET =====
+// ANIMACE KARET
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add("show");
-      }, index * 150);
+      entry.target.classList.add("show");
     }
   });
-}, {
-  threshold: 0.15
-});
+}, { threshold: 0.15 });
 
 cards.forEach(card => observer.observe(card));
