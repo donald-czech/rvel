@@ -1,5 +1,5 @@
 
-// ===== REVEAL ANIMACE =====
+// REVEAL
 const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
@@ -13,41 +13,35 @@ const observer = new IntersectionObserver((entries) => {
 elements.forEach(el => observer.observe(el));
 
 
-// ===== ELEMENTY =====
+// HAMBURGER
+const hamburger = document.getElementById("hamburger");
+const nav = document.querySelector(".nav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+
+// THEME
 const btn = document.getElementById("themeToggle");
 const heroImage = document.getElementById("heroImage");
-const header = document.querySelector(".header");
 
-
-// ===== FUNKCE PRO PLYNULÝ PŘECHOD OBRÁZKU =====
-function setHeroImage(src) {
+function updateImage() {
   if (!heroImage) return;
 
-  // fade out
   heroImage.style.opacity = 0;
 
   setTimeout(() => {
-    heroImage.src = src;
+    heroImage.src = document.body.classList.contains("dark")
+      ? "images/dark.jpg"
+      : "images/pozadi.jpeg";
 
-    // fade in
     heroImage.onload = () => {
       heroImage.style.opacity = 1;
     };
   }, 200);
 }
 
-
-// ===== UPDATE IMAGE PODLE TÉMATU =====
-function updateImage() {
-  if (document.body.classList.contains("dark")) {
-    setHeroImage("images/dark.jpg");
-  } else {
-    setHeroImage("images/pozadi.jpeg");
-  }
-}
-
-
-// ===== THEME TOGGLE =====
 btn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
@@ -59,22 +53,8 @@ btn.addEventListener("click", () => {
   updateImage();
 });
 
-
-// ===== LOAD TÉMA =====
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
 }
 
-
-// ===== INIT IMAGE =====
 updateImage();
-
-
-// ===== HEADER SCROLL EFFECT =====
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 10) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
