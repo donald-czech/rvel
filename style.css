@@ -1,4 +1,3 @@
-/* ===== ZÁKLAD ===== */
 :root {
   --bg: #fff;
   --text: #111;
@@ -19,7 +18,7 @@ body {
   color: var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
@@ -57,7 +56,7 @@ body.dark .header {
 
 .hamburger { display: none; }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   text-align: center;
   padding: 30px;
@@ -71,17 +70,16 @@ body.dark .header {
   border-radius: 12px;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .btn {
   display: inline-block;
   padding: 12px 18px;
   background: var(--accent);
   color: #fff;
   border-radius: 8px;
-  text-decoration: none;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -95,7 +93,39 @@ body.dark .header {
   border-radius: 10px;
 }
 
-/* ===== 🔥 ODDĚLOVAČ ===== */
+/* GALERIE */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* ===== ODDĚLOVAČ ===== */
 .divider {
   height: 5px;
   background: #000;
@@ -105,7 +135,7 @@ body.dark .header {
   opacity: 0.85;
 }
 
-/* ===== TEXT POD SLUŽBAMI ===== */
+/* TEXT */
 .after-services {
   max-width: 900px;
   margin: 0 auto;
@@ -115,19 +145,19 @@ body.dark .header {
   line-height: 1.6;
 }
 
-/* ===== ANIMACE KARET ===== */
-.card {
+/* ===== ANIMACE ===== */
+.reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
   transition: all 0.8s ease;
 }
 
-.card.show {
+.reveal.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .hamburger {
@@ -149,6 +179,10 @@ body.dark .header {
   }
 
   .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
