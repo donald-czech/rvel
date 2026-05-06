@@ -1,0 +1,45 @@
+
+.contact {
+  max-width: 700px;
+  margin: auto;
+  padding: 100px 20px 40px;
+}
+
+.contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-box {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.form-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+}
