@@ -1,31 +1,45 @@
-
-const hamburger = document.getElementById("hamburger");
+﻿const hamburger = document.getElementById("hamburger");
 const nav = document.querySelector(".nav");
+const toggle = document.getElementById("themeToggle");
 
-if (hamburger) {
-  hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  if (toggle) toggle.textContent = "☀";
 }
 
-// DARK MODE
-const toggle = document.getElementById("themeToggle");
+if (hamburger && nav) {
+  hamburger.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 if (toggle) {
   toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    toggle.textContent = isDark ? "☀" : "☾";
   });
 }
 
-// REVEAL ANIMATION (scroll)
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
+      observer.unobserve(entry.target);
     }
   });
+}, {
+  threshold: 0.16,
+  rootMargin: "0px 0px -40px"
 });
 
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));

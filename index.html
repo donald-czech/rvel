@@ -1,67 +1,69 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R. V. Elektro</title>
+  <meta name="description" content="R. V. Elektro nabízí elektroinstalační práce, opravy poruch, osvětlení a drobné elektro služby v Moravskoslezském kraji.">
+  <title>R. V. Elektro | Elektroinstalace a opravy</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-
 <header class="header">
   <div class="header-inner">
-
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp">
+    <a href="index.html" class="logo" aria-label="R. V. Elektro - úvod">
+      <img src="images/logo.webp" alt="Logo R. V. Elektro">
       <span class="logo-text">R. V. Elektro</span>
     </a>
 
-    <nav class="nav">
-      <a href="index.html">Úvod</a>
+    <nav class="nav" id="mainNav" aria-label="Hlavní navigace">
+      <a class="active" href="index.html">Úvod</a>
       <a href="sluzby.html">Služby</a>
       <a href="galerie.html">Galerie</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button id="themeToggle" class="theme-btn">🌓</button>
-
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Přepnout tmavý režim">☾</button>
+      <button id="hamburger" class="icon-btn hamburger" type="button" aria-label="Otevřít menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
-<section class="hero reveal">
-  <h1>Pro bezpečný a spolehlivý domov</h1>
-  <img id="heroImage" class="hero-image reveal" src="images/pozadi.jpeg">
-</section>
+<main>
+  <section class="hero reveal">
+    <div class="hero-copy">
+      <h1>Pro bezpečný a spolehlivý domov</h1>
+      <p>Elektroinstalace, rekonstrukce, opravy poruch a montáže pro domácnosti i menší provozy v Moravskoslezském kraji.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="kontakt.html">Domluvit zakázku</a>
+        <a class="btn btn-secondary" href="sluzby.html">Zobrazit služby</a>
+      </div>
+    </div>
+    <img id="heroImage" class="hero-image" src="images/pozadi.jpeg" alt="Elektroinstalační práce v interiéru">
+  </section>
 
-<section class="grid reveal">
+  <section class="section reveal" aria-labelledby="services-preview-title">
+    <h2 id="services-preview-title">S čím pomůžeme</h2>
+    <div class="service-preview">
+      <div class="card">Domovní elektroinstalace</div>
+      <div class="card">Rekonstrukce rozvodů</div>
+      <div class="card">Opravy poruch</div>
+      <div class="card">Osvětlení</div>
+      <div class="card">Zásuvky a vypínače</div>
+      <div class="card">Revize a kontroly</div>
+      <div class="card">Kamerové systémy</div>
+      <div class="card">Zvonky a domácí telefony</div>
+    </div>
+  </section>
 
-  <div class="card">Domovní elektroinstalace</div>
-  <div class="card">Rekonstrukce elektroinstalací</div>
-  <div class="card">Opravy poruch</div>
-  <div class="card">Osvětlení</div>
+  <div class="divider reveal"></div>
 
-  <div class="card">Zásuvky</div>
-  <div class="card">Revize</div>
-  <div class="card">Kamerové systémy</div>
-  <div class="card">Zvonky</div>
-
-</section>
-
-<div class="divider reveal"></div>
-
-<section class="hero">
-  <p>
-    Nabízíme komplexní elektroinstalační práce v Moravskoslezském kraji.
-    Jsme kvalifikovaní specialisté v oboru elektrotechniky.
- </p>
-
- <p>
-    S profesionálním přístupem a kvalitními službami se postaráme o bezpečnost a spolehlivost Vaší domácnosti.
- </p>
-</section>
+  <section class="section intro-text reveal">
+    <p>Nabízíme komplexní elektroinstalační práce s důrazem na bezpečnost, čisté provedení a spolehlivý domluvený termín.</p>
+    <p>Ke každé zakázce přistupujeme prakticky: vysvětlíme řešení, připravíme rozumný postup a po dokončení po sobě necháme pořádek.</p>
+  </section>
+</main>
 
 <script src="script.js"></script>
 <script src="index.js"></script>

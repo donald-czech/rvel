@@ -1,48 +1,52 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Služby</title>
+  <meta name="description" content="Přehled elektro služeb R. V. Elektro: instalace, rekonstrukce, opravy, osvětlení, zásuvky, revize, kamery a zvonky.">
+  <title>Služby | R. V. Elektro</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="sluzby.css">
 </head>
-
 <body>
-
 <header class="header">
   <div class="header-inner">
-
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp">
+    <a href="index.html" class="logo" aria-label="R. V. Elektro - úvod">
+      <img src="images/logo.webp" alt="Logo R. V. Elektro">
       <span class="logo-text">R. V. Elektro</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" id="mainNav" aria-label="Hlavní navigace">
       <a href="index.html">Úvod</a>
-      <a href="sluzby.html">Služby</a>
+      <a class="active" href="sluzby.html">Služby</a>
       <a href="galerie.html">Galerie</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button id="themeToggle" class="theme-btn">🌓</button>
-
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Přepnout tmavý režim">☾</button>
+      <button id="hamburger" class="icon-btn hamburger" type="button" aria-label="Otevřít menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
-<section class="grid reveal">
+<main>
+  <section class="page-title reveal">
+    <h1>Služby</h1>
+    <p>Praktické elektro práce pro domácnosti, byty, domy i menší provozy.</p>
+  </section>
 
-  <div class="card">Domovní elektroinstalace</div>
-  <div class="card">Rekonstrukce</div>
-  <div class="card">Opravy poruch</div>
-  <div class="card">Osvětlení</div>
-  <div class="card">Zásuvky</div>
-  <div class="card">Revize</div>
-  <div class="card">Kamerové systémy</div>
-  <div class="card">Zvonky</div>
-
-</section>
+  <section class="section services-grid reveal">
+    <article class="card service-card"><h2>Domovní elektroinstalace</h2><p>Nové rozvody, rozvaděče, zásuvkové a světelné okruhy.</p></article>
+    <article class="card service-card"><h2>Rekonstrukce rozvodů</h2><p>Výměna staré elektroinstalace při rekonstrukci bytu nebo domu.</p></article>
+    <article class="card service-card"><h2>Opravy poruch</h2><p>Diagnostika závad, výpadků, jističů a nefunkčních okruhů.</p></article>
+    <article class="card service-card"><h2>Osvětlení</h2><p>Montáž svítidel, LED pásků, vypínačů a návrh praktického rozmístění.</p></article>
+    <article class="card service-card"><h2>Zásuvky a vypínače</h2><p>Doplnění, přesun nebo výměna zásuvek, vypínačů a přívodů.</p></article>
+    <article class="card service-card"><h2>Revize a kontroly</h2><p>Kontrola bezpečnosti a příprava podkladů dle domluveného rozsahu.</p></article>
+    <article class="card service-card"><h2>Kamerové systémy</h2><p>Základní instalace kamer pro přehled o domě, garáži nebo provozu.</p></article>
+    <article class="card service-card"><h2>Zvonky a telefony</h2><p>Montáž a opravy zvonků, domácích telefonů a jednoduchých vstupních systémů.</p></article>
+  </section>
+</main>
 
 <script src="script.js"></script>
 <script src="sluzby.js"></script>

@@ -1,42 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie</title>
+  <meta name="description" content="Ukázky práce a vizuální materiály R. V. Elektro.">
+  <title>Galerie | R. V. Elektro</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="galerie.css">
 </head>
-
 <body>
-
 <header class="header">
   <div class="header-inner">
-
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp">
+    <a href="index.html" class="logo" aria-label="R. V. Elektro - úvod">
+      <img src="images/logo.webp" alt="Logo R. V. Elektro">
       <span class="logo-text">R. V. Elektro</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" id="mainNav" aria-label="Hlavní navigace">
       <a href="index.html">Úvod</a>
       <a href="sluzby.html">Služby</a>
-      <a href="galerie.html">Galerie</a>
+      <a class="active" href="galerie.html">Galerie</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button id="themeToggle" class="theme-btn">🌓</button>
-
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Přepnout tmavý režim">☾</button>
+      <button id="hamburger" class="icon-btn hamburger" type="button" aria-label="Otevřít menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
-<section class="gallery reveal">
-  <img src="images/pozadi.jpeg">
-  <img src="images/2.jpg">
-  <img src="images/3.jpg">
-  <img src="images/4.jpg">
-</section>
+<main>
+  <section class="page-title reveal">
+    <h1>Galerie</h1>
+    <p>Ukázky práce a materiály, které můžeš postupně doplňovat reálnými fotkami ze zakázek.</p>
+  </section>
+
+  <section class="section gallery reveal" aria-label="Fotogalerie">
+    <button type="button"><img src="images/pozadi.jpeg" alt="Ukázka elektro práce"></button>
+    <button type="button"><img src="images/dark.jpg" alt="Ukázka elektroinstalace"></button>
+    <button type="button"><img src="images/dark2.jpg" alt="Detail technického řešení"></button>
+    <button type="button"><img src="images/logo.webp" alt="Logo R. V. Elektro"></button>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Zavřít náhled">×</button>
+    <img src="" alt="Zvětšený náhled z galerie">
+  </div>
+</main>
 
 <script src="script.js"></script>
 <script src="galerie.js"></script>

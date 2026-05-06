@@ -1,91 +1,85 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt na R. V. Elektro: telefon, email, adresa a kontaktní formulář.">
   <title>Kontakt | R. V. Elektro</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="kontakt.css">
 </head>
-
 <body>
-
 <header class="header">
   <div class="header-inner">
-
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp">
+    <a href="index.html" class="logo" aria-label="R. V. Elektro - úvod">
+      <img src="images/logo.webp" alt="Logo R. V. Elektro">
       <span class="logo-text">R. V. Elektro</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" id="mainNav" aria-label="Hlavní navigace">
       <a href="index.html">Úvod</a>
       <a href="sluzby.html">Služby</a>
       <a href="galerie.html">Galerie</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a class="active" href="kontakt.html">Kontakt</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button id="themeToggle" class="theme-btn">🌓</button>
-
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Přepnout tmavý režim">☾</button>
+      <button id="hamburger" class="icon-btn hamburger" type="button" aria-label="Otevřít menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
-<!-- ================= TITLE ================= -->
-<section class="page-title reveal">
-  <h1>Kontakt</h1>
-</section>
+<main>
+  <section class="page-title reveal">
+    <h1>Kontakt</h1>
+    <p>Napiš nebo zavolej a domluvíme rozsah práce, termín i nejvhodnější postup.</p>
+  </section>
 
-<!-- ================= BOXES ================= -->
-<section class="contact-stack reveal">
+  <section class="section contact-stack reveal" aria-label="Kontaktní údaje">
+    <article class="card contact-box">
+      <h2>Adresa</h2>
+      <p>Tvoje ulice 123<br>738 01 Frýdek-Místek</p>
+    </article>
 
-  <div class="contact-box">
-    <h3>📍 Adresa</h3>
-    <p>Tvoje ulice 123<br>738 01 Frýdek-Místek</p>
-  </div>
+    <article class="card contact-box">
+      <h2>Telefon</h2>
+      <p><a href="tel:+420777123456">+420 777 123 456</a></p>
+    </article>
 
-  <div class="contact-box">
-    <h3>📞 Telefon</h3>
-    <p><a href="tel:+420777123456">+420 777 123 456</a></p>
-  </div>
+    <article class="card contact-box">
+      <h2>Email</h2>
+      <p><a href="mailto:info@rvelektro.cz">info@rvelektro.cz</a></p>
+    </article>
 
-  <div class="contact-box">
-    <h3>📧 Email</h3>
-    <p><a href="mailto:info@rvelektro.cz">info@rvelektro.cz</a></p>
-  </div>
+    <article class="card contact-box">
+      <h2>Firma</h2>
+      <p>R. V. Elektro<br>IČ: 12345678</p>
+    </article>
+  </section>
 
-  <div class="contact-box">
-    <h3>🏢 Firma</h3>
-    <p>R. V. Elektro</p>
-    <p>IČ: 12345678</p>
-  </div>
+  <div class="divider reveal"></div>
 
-</section>
-
-<!-- ================= FORM ================= -->
-
-<div class="divider reveal"></div>
-
-<section class="form-title reveal">
-  <h2>Kontaktní formulář</h2>
-</section>
-
-<section class="form-section reveal">
-
-  <form class="contact-form">
-
-    <input type="text" placeholder="Jméno a příjmení" required>
-    <input type="email" placeholder="Email" required>
-    <input type="text" placeholder="Telefon">
-
-    <textarea placeholder="Zpráva..." rows="6" required></textarea>
-
-    <button type="submit">Odeslat</button>
-
-  </form>
-
-</section>
+  <section class="section form-section reveal">
+    <h2>Kontaktní formulář</h2>
+    <form class="contact-form">
+      <label>Jméno a příjmení
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>Telefon
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
+      <label>Zpráva
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button type="submit">Odeslat zprávu</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
 
 <script src="script.js"></script>
 <script src="kontakt.js"></script>
