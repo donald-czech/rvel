@@ -16,36 +16,22 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-
-  /* 🔥 fix pro fixed header */
   padding-top: 80px;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 9999;
 
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(10px);
-  transition: 0.3s ease;
 }
 
 body.dark .header {
   background: rgba(0,0,0,0.75);
-}
-
-.header.scrolled {
-  background: rgba(255,255,255,0.98);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-body.dark .header.scrolled {
-  background: rgba(0,0,0,0.95);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
 .header-inner {
@@ -58,12 +44,11 @@ body.dark .header.scrolled {
   align-items: center;
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-
   text-decoration: none;
   padding: 6px 14px;
   border-radius: 999px;
@@ -81,7 +66,7 @@ body:not(.dark) .logo {
   font-weight: 800;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 .nav {
   display: flex;
   gap: 10px;
@@ -92,7 +77,6 @@ body:not(.dark) .logo {
   color: var(--text);
   padding: 6px 12px;
   border-radius: 999px;
-  transition: 0.2s;
 }
 
 body:not(.dark) .nav a:hover {
@@ -103,7 +87,7 @@ body.dark .nav a:hover {
   background: rgba(255,255,255,0.08);
 }
 
-/* ================= BUTTON ================= */
+/* BUTTON */
 .theme-btn {
   border: none;
   background: transparent;
@@ -111,38 +95,39 @@ body.dark .nav a:hover {
   font-size: 18px;
 }
 
-/* ================= HERO (🔥 FIX HLAVNÍ PROBLÉM) ================= */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px;
 }
 
 .hero-image {
   width: 100%;
   max-width: 900px;
-
-  /* 🔥 FIX: sjednocení velikosti */
   height: 420px;
   object-fit: cover;
 
   display: block;
   margin: 20px auto;
-
   border-radius: 12px;
 
-  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid {
   max-width: 1100px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-
   padding: 20px;
 }
 
@@ -152,7 +137,7 @@ body.dark .nav a:hover {
   border-radius: 10px;
 }
 
-/* ================= DIVIDER ================= */
+/* DIVIDER */
 .divider {
   height: 5px;
   background: #000;
@@ -160,11 +145,10 @@ body.dark .nav a:hover {
   margin: 50px auto;
 }
 
-/* ================= GALLERY ================= */
+/* GALLERY */
 .gallery {
   max-width: 1100px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -175,7 +159,7 @@ body.dark .nav a:hover {
   border-radius: 10px;
 }
 
-/* ================= ANIMACE ================= */
+/* ANIMACE */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -187,7 +171,7 @@ body.dark .nav a:hover {
   transform: translateY(0);
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .grid {
@@ -198,11 +182,22 @@ body.dark .nav a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .logo-text {
-    font-size: 15px;
+  .hamburger {
+    display: block;
   }
 
-  .hero-image {
-    height: 260px; /* 🔥 mobilní optimalizace */
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    flex-direction: column;
+    background: var(--bg);
+    padding: 10px;
+    border-radius: 12px;
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
   }
 }
