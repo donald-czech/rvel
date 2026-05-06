@@ -22,7 +22,7 @@ body {
 .header {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 2000;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(10px);
 }
@@ -133,7 +133,7 @@ body.dark .header {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
 }
 
 .lightbox img {
@@ -174,12 +174,13 @@ body.dark .header {
   transform: translateY(0);
 }
 
-/* ===== MOBILE FIX HAMBURGER ===== */
+/* ===== MOBILE MENU FIX ===== */
 @media (max-width: 768px) {
 
   .hamburger {
     display: block;
-    z-index: 1001;
+    z-index: 3000;
+    position: relative;
   }
 
   .nav {
@@ -193,14 +194,21 @@ body.dark .header {
 
     display: none;
 
-    /* 🔥 důležité */
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 2500;
+
+    width: max-content;
+    min-width: 180px;
+
     border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    /* 🔥 KLÍČOVÉ FIXY */
+    pointer-events: none;
   }
 
   .nav.active {
     display: flex;
+    pointer-events: auto;
   }
 
   .grid {
