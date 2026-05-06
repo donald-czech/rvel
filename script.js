@@ -1,35 +1,41 @@
-// DARK MODE
-document.getElementById("themeToggle").onclick = () => {
-  document.body.classList.toggle("dark");
-};
+// ===== DARK MODE =====
+const themeToggle = document.getElementById("themeToggle");
 
-// MENU
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+
+
+// ===== MOBILE MENU =====
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 
-menuToggle.onclick = () => {
+menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
-};
-
-document.querySelectorAll(".nav a").forEach(link => {
-  link.onclick = () => nav.classList.remove("active");
 });
 
-// ===== POMALÁ ANIMACE KARET =====
+
+// zavření menu po kliknutí na odkaz (mobil)
+document.querySelectorAll(".nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
+
+
+// ===== ANIMACE KARET =====
 const cards = document.querySelectorAll(".card");
 
-const cardObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-
       setTimeout(() => {
         entry.target.classList.add("show");
-      }, index * 200);
-
+      }, index * 150);
     }
   });
 }, {
   threshold: 0.15
 });
 
-cards.forEach(card => cardObserver.observe(card));
+cards.forEach(card => observer.observe(card));
