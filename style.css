@@ -19,7 +19,7 @@ body {
   padding-top: 80px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   position: fixed;
   top: 0;
@@ -44,7 +44,7 @@ body.dark .header {
   align-items: center;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
 .logo {
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ body:not(.dark) .logo {
   font-weight: 800;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 .nav {
   display: flex;
   gap: 10px;
@@ -87,7 +87,7 @@ body.dark .nav a:hover {
   background: rgba(255,255,255,0.08);
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .theme-btn {
   border: none;
   background: transparent;
@@ -95,14 +95,14 @@ body.dark .nav a:hover {
   font-size: 18px;
 }
 
-/* HAMBURGER */
+/* ================= HAMBURGER ================= */
 .hamburger {
   display: none;
   font-size: 26px;
   cursor: pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   text-align: center;
   padding: 40px;
@@ -121,7 +121,7 @@ body.dark .nav a:hover {
   transition: opacity 0.3s ease;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .grid {
   max-width: 1100px;
   margin: auto;
@@ -137,7 +137,7 @@ body.dark .nav a:hover {
   border-radius: 10px;
 }
 
-/* DIVIDER */
+/* ================= DIVIDER ================= */
 .divider {
   height: 5px;
   background: #000;
@@ -145,7 +145,7 @@ body.dark .nav a:hover {
   margin: 50px auto;
 }
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 .gallery {
   max-width: 1100px;
   margin: auto;
@@ -159,7 +159,19 @@ body.dark .nav a:hover {
   border-radius: 10px;
 }
 
-/* ANIMACE */
+/* ================= 🔥 DOLNÍ TEXT (CENTROVÁNÍ FIX) ================= */
+.after-services {
+  text-align: center;   /* ✔ horizontálně na střed */
+  padding: 30px 20px;
+}
+
+.after-services p {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* ================= ANIMACE ================= */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -171,7 +183,7 @@ body.dark .nav a:hover {
   transform: translateY(0);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .grid {
@@ -190,14 +202,20 @@ body.dark .nav a:hover {
     position: absolute;
     top: 70px;
     right: 15px;
+
     flex-direction: column;
     background: var(--bg);
     padding: 10px;
     border-radius: 12px;
+
     display: none;
   }
 
   .nav.active {
     display: flex;
+  }
+
+  .hero-image {
+    height: 260px;
   }
 }
