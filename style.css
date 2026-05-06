@@ -1,3 +1,4 @@
+/* ===== ZÁKLAD ===== */
 :root {
   --bg: #fff;
   --text: #111;
@@ -18,7 +19,7 @@ body {
   color: var(--text);
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header {
   position: sticky;
   top: 0;
@@ -56,7 +57,7 @@ body.dark .header {
 
 .hamburger { display: none; }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 30px;
@@ -65,21 +66,22 @@ body.dark .header {
 .hero-image {
   width: 100%;
   max-width: 900px;
-  display: block;
   margin: 20px auto;
+  display: block;
   border-radius: 12px;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn {
   display: inline-block;
   padding: 12px 18px;
   background: var(--accent);
   color: #fff;
   border-radius: 8px;
+  text-decoration: none;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -87,12 +89,34 @@ body.dark .header {
   padding: 20px;
 }
 
-/* CARD + ANIMACE */
 .card {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
+}
 
+/* ===== 🔥 ODDĚLOVAČ ===== */
+.divider {
+  height: 5px;
+  background: #000;
+  width: 85%;
+  margin: 60px auto 30px auto;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+/* ===== TEXT POD SLUŽBAMI ===== */
+.after-services {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px 60px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ===== ANIMACE KARET ===== */
+.card {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
@@ -103,38 +127,7 @@ body.dark .header {
   transform: translateY(0);
 }
 
-/* GALERIE */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-/* LIGHTBOX */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
   .hamburger {
@@ -156,10 +149,6 @@ body.dark .header {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
