@@ -58,6 +58,15 @@
   object-fit: cover;
   border-radius: 14px;
   box-shadow: var(--shadow);
+  opacity: 1;
+  filter: brightness(1);
+  transition: opacity 0.45s ease, filter 0.45s ease, transform 0.45s ease;
+}
+
+.hero-image.is-switching {
+  opacity: 0.18;
+  filter: brightness(0.7);
+  transform: scale(0.992);
 }
 
 .service-preview {
@@ -118,4 +127,5 @@
     width: 100%;
   }
 }
+
 
