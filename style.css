@@ -39,11 +39,11 @@ body.dark .header {
   padding: 18px;
 }
 
-/* ===== LOGO ===== */
+/* ===== UMĚLECKÉ LOGO ===== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-decoration: none;
 }
 
@@ -52,16 +52,27 @@ body.dark .header {
   width: auto;
 }
 
-.logo span {
-  font-size: 22px;
-  font-weight: 700;
+/* R. V. = elegantní */
+.logo-rv {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
   color: var(--text);
-  letter-spacing: 0.5px;
-  transition: 0.3s;
 }
 
-.logo:hover span {
+/* Elektro = moderní */
+.logo-elektro {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
   color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+/* hover efekt */
+.logo:hover .logo-elektro {
+  opacity: 0.8;
 }
 
 /* ===== NAV ===== */
@@ -94,7 +105,6 @@ body.dark .header {
   margin: 20px auto;
   display: block;
   border-radius: 12px;
-
   pointer-events: none;
 }
 
@@ -132,38 +142,6 @@ body.dark .header {
   transform: translateY(0);
 }
 
-/* ===== GALERIE ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-/* ===== LIGHTBOX ===== */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 100000;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
 /* ===== ODDĚLOVAČ ===== */
 .divider {
   height: 5px;
@@ -195,12 +173,12 @@ body.dark .header {
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
-  .logo span {
-    font-size: 18px;
+  .logo-rv {
+    font-size: 20px;
   }
 
-  .logo img {
-    height: 34px;
+  .logo-elektro {
+    font-size: 18px;
   }
 
   .hamburger {
@@ -227,10 +205,6 @@ body.dark .header {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
