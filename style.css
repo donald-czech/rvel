@@ -42,9 +42,7 @@ body.dark .header {
   gap: 10px;
 }
 
-.logo img {
-  height: 38px;
-}
+.logo img { height: 38px; }
 
 .nav {
   display: flex;
@@ -56,9 +54,7 @@ body.dark .header {
   color: var(--text);
 }
 
-.hamburger {
-  display: none;
-}
+.hamburger { display: none; }
 
 /* HERO */
 .hero {
@@ -69,18 +65,18 @@ body.dark .header {
 .hero-image {
   width: 100%;
   max-width: 900px;
-  margin: 20px auto;
   display: block;
+  margin: 20px auto;
   border-radius: 12px;
 }
 
 /* BUTTON */
 .btn {
-  background: var(--accent);
-  color: white;
+  display: inline-block;
   padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
   border-radius: 8px;
-  text-decoration: none;
 }
 
 /* GRID */
@@ -91,10 +87,20 @@ body.dark .header {
   padding: 20px;
 }
 
+/* CARD + ANIMACE */
 .card {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* GALERIE */
@@ -126,7 +132,6 @@ body.dark .header {
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 10px;
 }
 
 /* MOBILE */
@@ -156,9 +161,5 @@ body.dark .header {
 
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery img {
-    height: 160px;
   }
 }
