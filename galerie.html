@@ -6,45 +6,34 @@
   <title>Galerie</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="header">
-  <div class="header-inner container">
+  <div class="header-inner">
 
-    <div class="logo">
+    <a href="index.html" class="logo">
       <img src="images/logo.webp">
-      <span>R. V. Elektro</span>
-    </div>
+      <span class="logo-text">R. V. Elektro</span>
+    </a>
 
-    <nav id="nav" class="nav">
+    <nav class="nav">
       <a href="index.html">Úvod</a>
+      <a href="sluzby.html">Služby</a>
       <a href="galerie.html">Galerie</a>
     </nav>
 
-    <div class="actions">
-      <button id="themeToggle">🌓</button>
-      <button id="menuToggle" class="hamburger">☰</button>
-    </div>
+    <button id="themeToggle" class="theme-btn">🌓</button>
 
   </div>
 </header>
 
-<section class="section">
-  <h2>Galerie</h2>
-
-  <div class="gallery">
-    <img src="images/1.jpg">
-    <img src="images/2.jpg">
-    <img src="images/3.jpg">
-    <img src="images/4.jpg">
-    <img src="images/5.jpg">
-    <img src="images/6.jpg">
-  </div>
+<section class="gallery reveal">
+  <img src="images/pozadi.jpeg">
+  <img src="images/2.jpg">
+  <img src="images/3.jpg">
+  <img src="images/4.jpg">
 </section>
-
-<div id="lightbox" class="lightbox">
-  <img id="lightboxImg">
-</div>
 
 <script src="script.js"></script>
 </body>
