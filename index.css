@@ -6,11 +6,23 @@
   place-items: center;
 }
 
+/* ================= HERO TEXT ================= */
 .hero h1 {
   max-width: 700px;
   margin-bottom: 20px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
+/* když JS přidá show */
+.hero h1.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= HERO IMAGE ================= */
 .hero img {
   width: 100%;
   max-width: 900px;
@@ -19,12 +31,15 @@
   border-radius: 12px;
 }
 
+/* ================= GRID ================= */
 .grid {
   max-width: 1100px;
   margin: auto;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+
   padding: 20px;
 }
 
@@ -34,7 +49,9 @@
   border-radius: 10px;
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
