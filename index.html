@@ -1,81 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>R. V. Elektro</title>
-
-  <!-- fonty -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="header-inner container">
+  <div class="header-inner">
 
-    <!-- 🔥 UMĚLECKÉ LOGO -->
     <a href="index.html" class="logo">
-
-      <img src="images/logo.webp" alt="logo">
-
-      <span class="logo-rv">R. V.</span>
-      <span class="logo-elektro">Elektro</span>
-
+      <img src="images/logo.webp">
+      <span class="logo-text">R. V. Elektro</span>
     </a>
 
-    <nav id="nav" class="nav">
+    <nav class="nav">
       <a href="index.html">Úvod</a>
       <a href="sluzby.html">Služby</a>
       <a href="galerie.html">Galerie</a>
     </nav>
 
-    <div class="actions">
-      <button id="themeToggle">🌓</button>
-      <button id="menuToggle" class="hamburger">☰</button>
-    </div>
+    <button id="themeToggle" class="theme-btn">🌓</button>
 
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero reveal">
   <h1>Pro bezpečný a spolehlivý domov</h1>
-
-  <img class="hero-image" src="images/pozadi.jpeg" alt="elektro práce">
-
-  <a class="btn" href="sluzby.html">Naše služby</a>
+  <img class="hero-image reveal" src="images/pozadi.jpeg">
 </section>
 
-<!-- ===== SLUŽBY ===== -->
-<section id="sluzby" class="section">
-  <h2 class="reveal">Služby</h2>
-
-  <div class="grid">
-
-    <div class="card">Domovní elektroinstalace</div>
-    <div class="card">Rekonstrukce elektroinstalací</div>
-    <div class="card">Opravy poruch a závad</div>
-    <div class="card">Instalace osvětlení</div>
-    <div class="card">Výměna zásuvek a vypínačů</div>
-    <div class="card">Revize elektro</div>
-    <div class="card">Kamerové systémy</div>
-    <div class="card">Domovní zvonky</div>
-
-  </div>
+<section class="grid reveal">
+  <div class="card">Domovní elektroinstalace</div>
+  <div class="card">Rekonstrukce</div>
+  <div class="card">Opravy</div>
+  <div class="card">Osvětlení</div>
 </section>
 
-<!-- ===== ODDĚLOVAČ ===== -->
 <div class="divider reveal"></div>
 
-<!-- ===== TEXT ===== -->
 <section class="after-services reveal">
-  <p>
-    Nabízíme profesionální elektroinstalační práce s důrazem na bezpečnost, kvalitu a dlouhou životnost.
-  </p>
+  <p>Profesionální elektroinstalační práce.</p>
 </section>
 
 <script src="script.js"></script>
