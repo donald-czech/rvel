@@ -3,7 +3,6 @@
   --bg: #fff;
   --text: #111;
   --card: #f3f3f3;
-  --accent: #0077ff;
 }
 
 body.dark {
@@ -17,152 +16,150 @@ body {
   font-family: Arial;
   background: var(--bg);
   color: var(--text);
+  padding-top: 80px; /* 🔥 kvůli fixed header */
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER FIXED ===== */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 99999;
-  background: rgba(255,255,255,0.85);
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
 body.dark .header {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
+}
+
+.header.scrolled {
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+body.dark .header.scrolled {
+  background: rgba(0,0,0,0.95);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
 .header-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px;
 }
 
-/* ===== UMĚLECKÉ LOGO ===== */
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+body:not(.dark) .logo {
+  background: rgba(0,0,0,0.06);
 }
 
 .logo img {
-  height: 42px;
-  width: auto;
+  height: 40px;
 }
 
-/* R. V. = elegantní */
-.logo-rv {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--text);
+.logo-text {
+  font-weight: 800;
 }
 
-/* Elektro = moderní */
-.logo-elektro {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.5px;
-}
-
-/* hover efekt */
-.logo:hover .logo-elektro {
-  opacity: 0.8;
-}
-
-/* ===== NAV ===== */
+/* NAV */
 .nav {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
 }
 
-/* ===== HAMBURGER ===== */
-.hamburger {
-  display: none;
+body:not(.dark) .nav a:hover {
+  background: rgba(0,0,0,0.08);
 }
 
-/* ===== HERO ===== */
+body.dark .nav a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* BUTTON */
+.theme-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* HERO */
 .hero {
-  position: relative;
-  z-index: 1;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
 }
 
 .hero-image {
   width: 100%;
   max-width: 900px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 12px;
-  pointer-events: none;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-/* ===== GRID ===== */
+/* GRID */
 .grid {
+  max-width: 1100px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   padding: 20px;
 }
 
-/* ===== KARTY ===== */
 .card {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
-
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease;
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== ODDĚLOVAČ ===== */
+/* DIVIDER */
 .divider {
   height: 5px;
   background: #000;
   width: 85%;
-  margin: 60px auto 30px auto;
+  margin: 50px auto;
 }
 
-/* ===== TEXT ===== */
-.after-services {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 20px 60px;
+/* GALLERY */
+.gallery {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-/* ===== ANIMACE ===== */
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s ease;
+  transition: 0.8s ease;
 }
 
 .reveal.show {
@@ -170,41 +167,13 @@ body.dark .header {
   transform: translateY(0);
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media (max-width: 768px) {
-
-  .logo-rv {
-    font-size: 20px;
-  }
-
-  .logo-elektro {
-    font-size: 18px;
-  }
-
-  .hamburger {
-    display: block;
-    z-index: 100000;
-  }
-
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: var(--bg);
-    flex-direction: column;
-    padding: 15px;
-    display: none;
-    z-index: 99999;
-    border-radius: 10px;
-    pointer-events: none;
-  }
-
-  .nav.active {
-    display: flex;
-    pointer-events: auto;
-  }
-
   .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
