@@ -70,7 +70,6 @@ body.dark .header {
 .nav {
   display: flex;
   gap: 15px;
-  transition: all 0.3s ease;
 }
 
 .nav a {
@@ -94,13 +93,6 @@ body.dark .header {
   width: 100%;
 }
 
-/* ===== ACTIONS ===== */
-.actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
 /* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
@@ -108,7 +100,6 @@ body.dark .header {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text);
 }
 
 /* ===== HERO ===== */
@@ -117,6 +108,7 @@ body.dark .header {
   text-align: center;
 }
 
+/* světle šedý box */
 body:not(.dark) .hero {
   background: #f2f2f2;
   margin: 20px 0;
@@ -127,6 +119,17 @@ body:not(.dark) .hero {
 
 .hero h1 {
   font-size: 48px;
+}
+
+/* ===== 🔥 OPRAVA OBRÁZKU ===== */
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 25px auto;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
 /* ===== BUTTON ===== */
@@ -166,12 +169,11 @@ body:not(.dark) .hero {
   transition: 1s ease;
 }
 
-/* ===== HOVER ===== */
 .card:hover {
   transform: scale(1.05);
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE NAV ===== */
 @media (max-width: 768px) {
 
   .hamburger {
@@ -188,8 +190,7 @@ body:not(.dark) .hero {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-    display: none; /* default skryté */
+    display: none;
   }
 
   .nav.active {
@@ -198,5 +199,11 @@ body:not(.dark) .hero {
 
   .hero h1 {
     font-size: 32px;
+  }
+
+  /* 🔥 MOBILNÍ OBRÁZEK FIX */
+  .hero-image {
+    max-width: 100%;
+    margin: 15px auto;
   }
 }
